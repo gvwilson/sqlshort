@@ -1,0 +1,18 @@
+[project]
+name = "sqlshort"
+description = "short introduction to SQL"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "mccole",
+]
+
+[tool.mccole]
+title = "Introduction to SQL"
+repo = "https://github.com/gvwilson/sqlshort"
+skips = [
+    "*~",
+    "*.sql",
+    "db/**",
+    "uv.lock"
+]
