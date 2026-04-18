@@ -10,6 +10,7 @@
 1.  [Missing Data](@/null/)
 1.  [Joins](@/join/)
 1.  [Keys](@/keys/)
+1.  [Practice](@/practice/)
 
 </div>
 
@@ -19,6 +20,7 @@
 
 1.  [License](@/license/)
 1.  [Code of Conduct](@/conduct/)
+1.  [Answers](@/answers/)
 
 </div>
 
