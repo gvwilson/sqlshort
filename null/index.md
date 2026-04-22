@@ -78,7 +78,7 @@ select count(*) from penguins;
 
 There are only two things we can do with `null` that don't produce `null` as a result: ask if a value is `null`, and ask if it isn't. If we're interested in the `sex` column, the first is written `sex is null`, while the second is written `sex is not null`. Note that `is null` and `is not null` are written as multiple words, but are a single test; it's confusing, but we're stuck with it.
 
-Let's have a look at some practical examples. If we select the distinct values of `sex` from the `penguins` table, we get `"FEMALE"`, `"MALE"`, and `null`. (The first line of output is blank, which is how Marimo shows null values.)
+Let's have a look at some practical examples. If we select the distinct values of `sex` from the `penguins` table, we get `'FEMALE'`, `'MALE'`, and `null`. (The first line of output is blank, which is how Marimo shows null values.)
 
 ```sql
 select distinct sex from penguins order by sex;

@@ -13,14 +13,14 @@ Suppose we only want to see penguins from Dream island, regardless of their spec
 ```sql
 select distinct species, island, sex
 from penguins
-where island = "Dream";
+where island = 'Dream';
 ```
 
 There are several noteworthy things in this query:
 
 1. We don't have to use `distinct`. If we leave it out, we get *all* the penguins on Dream island. (We included it to make the output easier to read without paging.)
 2. The `where` clause *must* come after the `from` clause. SQL is very picky about ordering…
-3. We don't put quotation marks around `island` because it's the name of a column. We *do* put quotes around `"Dream"` because it's an actual literal piece of text.
+3. We don't put quotation marks around `island` because it's the name of a column. We *do* put quotes around `'Dream'` because it's an actual literal piece of text.
 4. We use a single equals sign `=` to check for equality. This is different from most programming languages, which use `==`.
 
 <div class="callout" markdown="1">
@@ -29,7 +29,9 @@ There are several noteworthy things in this query:
 
 2. Change the column name `island` to `ISLAND` and re-run the query: what happens?
 
-3. Change the text value `"Dream"` to `"DREAM"`: what happens?
+3. Change the text value `'Dream'` to `'DREAM'`: what happens?
+
+4. Change the text value `'Dream'` to `"Dream"` (with double quotes): what happens?
 
 </div>
 
@@ -41,8 +43,8 @@ We can do all of the usual comparisons in SQL:
 | :--- | ------ | :------ |
 | less than | `<` | `body_mass_g < 3300` |
 | less than or equal | `<=` | `flipper_length_mm < 200.0` |
-| equal | `=` | `species = "Gentoo"` |
-| not equal | `!=` or `<>` | `species != "Gentoo"` |
+| equal | `=` | `species = 'Gentoo'` |
+| not equal | `!=` or `<>` | `species != 'Gentoo'` |
 | greater than or equal | `>=` | `flipper_length_mm >= 200.0` |
 | greater than | `>` | `body_mass_g > 3300` |
 

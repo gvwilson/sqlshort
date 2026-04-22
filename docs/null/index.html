@@ -88,7 +88,7 @@
 </div>
 <h2>Handling Nulls</h2>
 <p>There are only two things we can do with <code>null</code> that don't produce <code>null</code> as a result: ask if a value is <code>null</code>, and ask if it isn't. If we're interested in the <code>sex</code> column, the first is written <code>sex is null</code>, while the second is written <code>sex is not null</code>. Note that <code>is null</code> and <code>is not null</code> are written as multiple words, but are a single test; it's confusing, but we're stuck with it.</p>
-<p>Let's have a look at some practical examples. If we select the distinct values of <code>sex</code> from the <code>penguins</code> table, we get <code>"FEMALE"</code>, <code>"MALE"</code>, and <code>null</code>. (The first line of output is blank, which is how Marimo shows null values.)</p>
+<p>Let's have a look at some practical examples. If we select the distinct values of <code>sex</code> from the <code>penguins</code> table, we get <code>'FEMALE'</code>, <code>'MALE'</code>, and <code>null</code>. (The first line of output is blank, which is how Marimo shows null values.)</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">penguins</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sex</span><span class="p">;</span>
 </code></pre></div>
 <p>If we want to get all the rows that have a null value for <code>sex</code>, we <em>cannot</em> do this:</p>
