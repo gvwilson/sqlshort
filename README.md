@@ -16,6 +16,9 @@
 1.  [Joins](@/join/)
 1.  [Keys](@/keys/)
 1.  [Subqueries](@/subquery/)
+1.  [Modifying Data](@/modify/)
+1.  [Conditionals](@/conditional/)
+1.  [Advanced Topics](@/advanced/)
 1.  [Practice](@/practice/)
 
 </div>
