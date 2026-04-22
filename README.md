@@ -1,5 +1,10 @@
 # Introduction to SQL
 
+<p class="center" markdown="1">[download the databases](https://raw.githubusercontent.com/gvwilson/sqlshort/main/docs/databases.zip)</p>
+
+<div class="row" markdown="1">
+<div class="col-6" markdown="1">
+
 ## Lessons
 
 <div id="lessons" markdown="1">
@@ -14,6 +19,9 @@
 
 </div>
 
+</div>
+<div class="col-6" markdown="1">
+
 ## Appendices
 
 <div id="appendices" markdown="1">
@@ -22,6 +30,8 @@
 1.  [Code of Conduct](@/conduct/)
 1.  [Answers](@/answers/)
 
+</div>
+</div>
 </div>
 
 <p class="center">
