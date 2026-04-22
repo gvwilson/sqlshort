@@ -134,3 +134,33 @@ Only show people who have rated at least two different machines.
 Show each supervisor's full name (as `supervisor`)
 and the number of people they supervise (as `num_reports`).
 Only show people who supervise at least one other person.
+
+### 26. People who have done surveys
+
+Use `in` with a subquery to show the full name of every person
+who has at least one entry in the `survey` table.
+Do not show duplicates. Order by family name.
+
+### 27. People who have never done a survey
+
+Use `not in` with a subquery to show the full name of every person
+in the `person` table who has no entries in the `survey` table.
+
+### 28. People with no machine ratings
+
+Use `not in` with a subquery to find every person
+who does not appear in the `rating` table at all.
+Show their full name (as `full_name`).
+
+### 29. Surveys done by supervisors
+
+Use `in` with a subquery to show the `survey_id` and `start_date`
+of every survey carried out by someone who supervises at least one other person.
+(Hint: find the `person_id` values that appear as `supervisor_id` in the `person` table.
+Be careful: some `supervisor_id` values are `null`, and including `null` in an `in` list
+can cause rows to be silently dropped from the results.)
+
+### 30. Machine types with no non-null ratings
+
+Use `not in` with a subquery to show the `machine_type` of every machine
+that has never received a non-null rating level.

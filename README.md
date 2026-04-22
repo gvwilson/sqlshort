@@ -15,6 +15,7 @@
 1.  [Missing Data](@/null/)
 1.  [Joins](@/join/)
 1.  [Keys](@/keys/)
+1.  [Subqueries](@/subquery/)
 1.  [Practice](@/practice/)
 
 </div>

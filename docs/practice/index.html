@@ -25,6 +25,7 @@
 <li><a href="../null/">Missing Data</a></li>
 <li><a href="../join/">Joins</a></li>
 <li><a href="../keys/">Keys</a></li>
+<li><a href="../subquery/">Subqueries</a></li>
 <li><a class="active" href="../practice/">Practice</a></li>
 </ul>
 </div>
@@ -124,11 +125,31 @@ Only show people who have rated at least two different machines.</p>
 <p>Show each supervisor's full name (as <code>supervisor</code>)
 and the number of people they supervise (as <code>num_reports</code>).
 Only show people who supervise at least one other person.</p>
+<h3>26. People who have done surveys</h3>
+<p>Use <code>in</code> with a subquery to show the full name of every person
+who has at least one entry in the <code>survey</code> table.
+Do not show duplicates. Order by family name.</p>
+<h3>27. People who have never done a survey</h3>
+<p>Use <code>not in</code> with a subquery to show the full name of every person
+in the <code>person</code> table who has no entries in the <code>survey</code> table.</p>
+<h3>28. People with no machine ratings</h3>
+<p>Use <code>not in</code> with a subquery to find every person
+who does not appear in the <code>rating</code> table at all.
+Show their full name (as <code>full_name</code>).</p>
+<h3>29. Surveys done by supervisors</h3>
+<p>Use <code>in</code> with a subquery to show the <code>survey_id</code> and <code>start_date</code>
+of every survey carried out by someone who supervises at least one other person.
+(Hint: find the <code>person_id</code> values that appear as <code>supervisor_id</code> in the <code>person</code> table.
+Be careful: some <code>supervisor_id</code> values are <code>null</code>, and including <code>null</code> in an <code>in</code> list
+can cause rows to be silently dropped from the results.)</p>
+<h3>30. Machine types with no non-null ratings</h3>
+<p>Use <code>not in</code> with a subquery to show the <code>machine_type</code> of every machine
+that has never received a non-null rating level.</p>
 </main>
 <footer aria-label="Page navigation">
 <div class="row">
 <div class="col-3 left">
-<span aria-hidden="true">⇐</span> <a href="../keys/">Keys</a>
+<span aria-hidden="true">⇐</span> <a href="../subquery/">Subqueries</a>
 </div>
 <div class="col-6 center">
 <a href="../">Introduction to SQL</a>
