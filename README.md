@@ -9,6 +9,7 @@
 
 <div id="lessons" markdown="1">
 
+1.  [Introduction](@/intro/)
 1.  [Basic Selection](@/basic_select/)
 1.  [Filtering](@/filter/)
 1.  [Aggregation and Grouping](@/aggregate_group/)
@@ -31,6 +32,8 @@
 <div id="appendices" markdown="1">
 
 1.  [License](@/license/)
+1.  [Bibliography](@/bibliography/)
+1.  [Glossary](@/glossary/)
 1.  [Code of Conduct](@/conduct/)
 1.  [Answers](@/answers/)
 

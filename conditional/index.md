@@ -177,7 +177,3 @@ where machine_type glob 'hydraulic*';
 2. Write a query using `glob` that finds all people in `person` whose family name starts with a capital letter between `'A'` and `'M'`. (Hint: `[A-M]` is a valid glob character class.)
 
 </div>
-
-## Check Understanding
-
-![concept map](./concepts.svg)

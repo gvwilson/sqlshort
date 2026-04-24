@@ -41,7 +41,7 @@
 <span id="base_case">base case</span>
 :   A starting point for recursion that does not depend on previous recursive calculations.
 
-<span id="blob">Binary Large Object (blob)</span>
+<span id="blob">Binary Large Object</span> (blob)
     Bytes that are handled as-is rather than being interpreted as numbers, text, or other data types.
 
 ## C
@@ -50,10 +50,10 @@
 :   A database that is managed by its own server process
     that clients interact with through network connections.
 
-<span id="cross_join">cross join</span>
-:   A join that creates the cross-product of rows from two tables.
+<span id="comma_separated_values">comma-separated values</span> (CSV)
+    A text format for tabular data that uses commas to separate columns.
 
-<span id="cte">common table expression (CTE)</span>
+<span id="common_table_expression">common table expression</span> (CTE)
     A temporary table created at the start of a query,
     usually to simplify writing the query.
 
@@ -67,8 +67,8 @@
 :   A subquery that depends on a value or values from the enclosing query,
     and which must therefore be executed once for each of those values.
 
-<span id="csv">comma-separated values (CSV)</span>
-    A text format for tabular data that uses commas to separate columns.
+<span id="cross_join">cross join</span>
+:   A join that creates the cross-product of rows from two tables.
 
 <span id="cursor">cursor</span>
 :   A reference to the current location in the results of an ongoing query.
@@ -84,7 +84,7 @@
 <span id="database">database</span>
 :   A collection of data that can be searched and retrieved.
 
-<span id="dbms">database management system (DBMS)</span>
+<span id="dbms">database management system</span> (DBMS)
     A program that manages a particular kind of database.
 
 <span id="denormalization">denormalization</span>
@@ -155,7 +155,7 @@
 <span id="join_table">join table</span>
 :   A table that exists solely to enable information from two tables to be connected.
 
-<span id="json">JavaScript Object Notation (JSON)</span>
+<span id="json">JavaScript Object Notation</span> (JSON)
     A text format for representing numbers, strings, lists, and key-value maps.
 
 ## K
@@ -193,7 +193,7 @@
 
 ## O
 
-<span id="orm">object-relational mapper (ORM)</span>
+<span id="orm">object-relational mapper</span> (ORM)
     A library that translates objects in a program into database queries
     and the results of those queries back into objects.
 
@@ -219,14 +219,14 @@
 
 ## R
 
-<span id="recursive_cte">recursive CTE</span>
-:   A common table expression that refers to itself.
-    Every recursive CTE must have a base case and a recursive case.
-
 <span id="recursive_case">recursive case</span>
 :   The second or subsequent step in self-referential accumulation of data.
 
-<span id="rdbms">relational database management system (RDBMS)</span>
+<span id="recursive_common_table_expression">recursive CTE</span>
+:   A common table expression that refers to itself.
+    Every recursive CTE must have a base case and a recursive case.
+
+<span id="rdbms">relational database management system</span> (RDBMS)
     A database management system that stores data in tables with columns and rows.
 
 <span id="right_outer_join">right outer join</span>
@@ -277,7 +277,7 @@
 :   To update a record if it exists
     or insert (create) a new record if it doesn't.
 
-<span id="uri">Uniform Resource Identifier (URI)</span>
+<span id="uri">Uniform Resource Identifier</span> (URI)
     A string that identifies a resource (such as a web page or database)
     and the protocol used to access it.
 

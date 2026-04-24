@@ -235,7 +235,3 @@ The first row within each partition has no previous row, so `lag` returns `null`
 2. Use `lag` to find pairs of consecutive penguins (within a species, ordered by mass) where the mass difference is greater than 500g.
 
 </div>
-
-## Check Understanding
-
-![concept map](./concepts.svg)
