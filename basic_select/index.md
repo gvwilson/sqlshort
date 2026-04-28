@@ -85,6 +85,8 @@ Selecting one chunk of data after another is called **paging**. Applications fre
 
 5. Suppose you are paging through a table while another application is adding and deleting rows. What would you want to happen? What do you think will happen?
 
+6. Use `order by` and `limit` to find the heaviest penguin. Use it again to find the lightest.
+
 </div>
 
 ## Removing Duplicates

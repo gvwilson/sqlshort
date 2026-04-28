@@ -54,9 +54,7 @@ Comparing numbers is straightforward. When we compare text, the comparison uses 
 
 1. Find all the penguins that _aren't_ on Torgersen island.
 
-2. Use `where`, `order by`, and `limit` to find the heaviest penguin. Use it again to find the lightest.
-
-3. What happens if we accidentally compare a number to text? For example, what happens if we select penguins where `species` is less than 3000, or where `body_mass_g` is greater than the letter 'M'?
+2. What happens if we accidentally compare a number to text? For example, what happens if we select penguins where `species` is less than 3000, or where `body_mass_g` is greater than the letter 'M'?
 
 </div>
 
