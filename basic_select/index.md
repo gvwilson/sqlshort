@@ -20,7 +20,7 @@ select sex, island, species from penguins;
 
 <div class="callout" markdown="1">
 
-1. Try editing the SQL in the query cell to change the column order, or to get the `bill_length_mm` column.
+1. Editing the SQL to change the column order, or to get the `bill_length_mm` column.
 
 </div>
 
@@ -75,9 +75,9 @@ Selecting one chunk of data after another is called **paging**. Applications fre
 
 <div class="callout" markdown="1">
 
-1. Add a cell below to get rows 12 through 17 from the `penguins` table. Think carefully about what the `offset` and `limit` need to be to get precisely these rows.
+1. Try changing the query above to be `offset 5 limit 5`. Do you understand the result?
 
-2. Try changing the query above to be `offset 5 limit 5`. Do you understand the result?
+2. Write a query to get rows 12 through 17 from the `penguins` table. Think carefully about what the `offset` and `limit` need to be to get precisely these rows.
 
 3. What happens if you specify a limit that is greater than the number of rows in the table?
 
