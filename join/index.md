@@ -4,14 +4,22 @@ Relational databases get their name from the fact that they store the relations 
 
 ## Basic Joins
 
-The `jobs` database has two tables. The first, called `job`, shows the credits that students can earn doing different kinds of jobs, and has two rows and two columns:
+The `jobs` database has two tables. The first, called `job`, shows the credits that students can earn doing different kinds of jobs. The other table, `work`, keeps track of who has done which jobs:
+
+<div class="row" markdown="1">
+<div class="col-6" markdown="1">
+
+<p class="center"><strong>job</strong></p>
 
 | name | credits |
 | :--- | ------: |
 | calibrate | 1.5 |
 | clean | 0.5 |
 
-The other table, `work`, keeps track of who has done which jobs:
+</div>
+<div class="col-6" markdown="1">
+
+<p class="center"><strong>work</strong></p>
 
 | person | job |
 | :----- | :-- |
@@ -22,6 +30,9 @@ The other table, `work`, keeps track of who has done which jobs:
 | Gita | clean |
 | Gita | complain |
 | Madhi | complain |
+
+</div>
+</div>
 
 We want to know how many credits each student has earned. The first step in answering this is to **join** the tables together.
 
@@ -60,10 +71,15 @@ The standard also encourages us to write our join as `inner join`, because as we
 We are now able to answer our original question: how many credits has each student earned?
 
 ```sql
-select work.person, sum(job.credits) as total     -- add up the credits for each person
-from job inner join work                          -- notice: inner join
+ -- add up the credits for each person
+select work.person, sum(job.credits) as total
+
+-- only combine rows that refer to the same thing
+from job inner join work
 on job.name = work.job
-group by work.person;                             -- put all the credits for each person into a separate bucket
+
+-- put all the credits for each person into a separate bucket
+group by work.person;
 ```
 
 ## Left Joins
@@ -101,7 +117,7 @@ We can now sum up everyone's credits:
 
 ```sql
 select work.person, sum(job.credits) as total
-from work left join job                          -- notice: left join
+from work left join job
 on work.job = job.name
 group by work.person;
 ```

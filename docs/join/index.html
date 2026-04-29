@@ -50,7 +50,10 @@
 <h1>Combining Tables</h1>
 <p>Relational databases get their name from the fact that they store the relations between tables. This tutorial shows how to connect and combine information from multiple tables. We will save most of the exercises for the next tutorial, where we start working with our first complex database.</p>
 <h2>Basic Joins</h2>
-<p>The <code>jobs</code> database has two tables. The first, called <code>job</code>, shows the credits that students can earn doing different kinds of jobs, and has two rows and two columns:</p>
+<p>The <code>jobs</code> database has two tables. The first, called <code>job</code>, shows the credits that students can earn doing different kinds of jobs. The other table, <code>work</code>, keeps track of who has done which jobs:</p>
+<div class="row">
+<div class="col-6">
+<p class="center"><strong>job</strong></p>
 <table>
 <thead>
 <tr>
@@ -69,7 +72,9 @@
 </tr>
 </tbody>
 </table>
-<p>The other table, <code>work</code>, keeps track of who has done which jobs:</p>
+</div>
+<div class="col-6">
+<p class="center"><strong>work</strong></p>
 <table>
 <thead>
 <tr>
@@ -108,6 +113,8 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 <p>We want to know how many credits each student has earned. The first step in answering this is to <strong>join</strong> the tables together.</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">select</span><span class="w"> </span><span class="o">*</span>
 <span class="k">from</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="k">work</span><span class="p">;</span>
@@ -131,10 +138,15 @@
 <p>Many years ago, using <code>on</code> sometimes gave slightly higher performance. Today, though, the two forms are equivalent from the database manager's point of view. Many people still prefer <code>on</code> for readability: it shows how the rows are being combined, while <code>where</code> shows how combined rows are being filtered. As with almost everything in programming, what matters most is to pick one and stick to it so that your queries are consistent.</p>
 <p>The standard also encourages us to write our join as <code>inner join</code>, because as we will see in a moment, other kinds of joins exist. People often skip this and just write <code>join</code>, or even use a simple comma between the table names, but from now on we will be pedantic to make what we're doing clearer.</p>
 <p>We are now able to answer our original question: how many credits has each student earned?</p>
-<div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">select</span><span class="w"> </span><span class="k">work</span><span class="p">.</span><span class="n">person</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">job</span><span class="p">.</span><span class="n">credits</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">total</span><span class="w">     </span><span class="c1">-- add up the credits for each person</span>
-<span class="k">from</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="k">work</span><span class="w">                          </span><span class="c1">-- notice: inner join</span>
+<div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="w"> </span><span class="c1">-- add up the credits for each person</span>
+<span class="k">select</span><span class="w"> </span><span class="k">work</span><span class="p">.</span><span class="n">person</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">job</span><span class="p">.</span><span class="n">credits</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">total</span>
+
+<span class="c1">-- only combine rows that refer to the same thing</span>
+<span class="k">from</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="k">work</span>
 <span class="k">on</span><span class="w"> </span><span class="n">job</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">work</span><span class="p">.</span><span class="n">job</span>
-<span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">work</span><span class="p">.</span><span class="n">person</span><span class="p">;</span><span class="w">                             </span><span class="c1">-- put all the credits for each person into a separate bucket</span>
+
+<span class="c1">-- put all the credits for each person into a separate bucket</span>
+<span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">work</span><span class="p">.</span><span class="n">person</span><span class="p">;</span>
 </code></pre></div>
 <h2>Left Joins</h2>
 <p>The query above shows us how many credits Amal and Gita have earned, but doesn't show anything for Madhi. Ideally, we'd like a row showing that she has earned zero credits. To get this, we need to use a different kind of join called a <strong>left join</strong>. A left join is created by following these rules:</p>
@@ -163,7 +175,7 @@
 <h2>Coalesce</h2>
 <p>We can now sum up everyone's credits:</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">select</span><span class="w"> </span><span class="k">work</span><span class="p">.</span><span class="n">person</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">job</span><span class="p">.</span><span class="n">credits</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">total</span>
-<span class="k">from</span><span class="w"> </span><span class="k">work</span><span class="w"> </span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">job</span><span class="w">                          </span><span class="c1">-- notice: left join</span>
+<span class="k">from</span><span class="w"> </span><span class="k">work</span><span class="w"> </span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">job</span>
 <span class="k">on</span><span class="w"> </span><span class="k">work</span><span class="p">.</span><span class="n">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">job</span><span class="p">.</span><span class="n">name</span>
 <span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">work</span><span class="p">.</span><span class="n">person</span><span class="p">;</span>
 </code></pre></div>
