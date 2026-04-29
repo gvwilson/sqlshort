@@ -2,7 +2,7 @@
 
 ## Using penguins.db
 
-### 1. Show all penguins
+### 1. Show all penguins {#show-all-penguins}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -15,7 +15,7 @@ The `*` shorthand selects every column; without an `order by` clause, rows may a
 
 </details>
 
-### 2. Show species and island
+### 2. Show species and island {#show-species-and-island}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -28,7 +28,7 @@ Listing column names instead of `*` controls which columns appear and in what or
 
 </details>
 
-### 3. Distinct islands
+### 3. Distinct islands {#distinct-islands}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -43,7 +43,7 @@ order by island;
 
 </details>
 
-### 4. Lightest penguins first
+### 4. Lightest penguins first {#lightest-penguins-first}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -60,7 +60,7 @@ so the two penguins with unknown mass appear first.
 
 </details>
 
-### 5. Body mass in kilograms
+### 5. Body mass in kilograms {#body-mass-in-kilograms}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -76,7 +76,7 @@ so when `body_mass_g` is `null` it falls through to the string `'unknown'`.
 
 </details>
 
-### 6. Gentoo penguins only
+### 6. Gentoo penguins only {#gentoo-penguins-only}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -92,7 +92,7 @@ so only Gentoo rows are counted.
 
 </details>
 
-### 7. Long flippers
+### 7. Long flippers {#long-flippers}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -107,7 +107,7 @@ Rows where `flipper_length_mm` is `null` do not pass the `>` test and are exclud
 
 </details>
 
-### 8. Heavy penguins on Biscoe
+### 8. Heavy penguins on Biscoe {#heavy-penguins-on-biscoe}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -122,7 +122,7 @@ Both conditions must be true for a row to appear.
 
 </details>
 
-### 9. Chinstrap or Torgersen
+### 9. Chinstrap or Torgersen {#chinstrap-or-torgersen}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -138,7 +138,7 @@ so Adelie penguins on Torgersen and all Chinstrap penguins (on Dream) both appea
 
 </details>
 
-### 10. Summary statistics
+### 10. Summary statistics {#summary-statistics}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -156,7 +156,7 @@ and collapse the table to a single result row.
 
 </details>
 
-### 11. Average mass by species
+### 11. Average mass by species {#average-mass-by-species}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -174,7 +174,7 @@ and `desc` reverses the default ascending sort.
 
 </details>
 
-### 12. Islands with large average flippers
+### 12. Islands with large average flippers {#islands-with-large-average-flippers}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -192,7 +192,7 @@ Using `where` here would not work because `avg_flipper_mm` does not exist until 
 
 </details>
 
-### 13. Counting nulls in sex
+### 13. Counting nulls in sex {#counting-nulls-in-sex}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -208,7 +208,7 @@ so the 11-row difference is the number of penguins whose sex was not recorded.
 
 </details>
 
-### 14. Known mass, unknown sex
+### 14. Known mass, unknown sex {#known-mass-unknown-sex}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -226,7 +226,7 @@ Comparing with `= null` or `!= null` always produces `null`, never `true`.
 
 ## Using survey.db
 
-### 15. Distinct machine types
+### 15. Distinct machine types {#distinct-machine-types}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -241,7 +241,7 @@ Each row in `machine` has one type, so `distinct` removes any repeated type name
 
 </details>
 
-### 16. Full names
+### 16. Full names {#full-names}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -257,7 +257,7 @@ Inserting a literal space between the two names produces a readable full name.
 
 </details>
 
-### 17. Surveys without an end date
+### 17. Surveys without an end date {#surveys-without-an-end-date}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -272,7 +272,7 @@ where end_date is null;
 
 </details>
 
-### 18. Survey count per person
+### 18. Survey count per person {#survey-count-per-person}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -289,7 +289,7 @@ and `count(*)` then counts those rows.
 
 </details>
 
-### 19. People and their surveys
+### 19. People and their surveys {#people-and-their-surveys}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -308,7 +308,7 @@ People with no surveys do not appear.
 
 </details>
 
-### 20. People with machine ratings
+### 20. People with machine ratings {#people-with-machine-ratings}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -323,7 +323,7 @@ The join produces one row per rating entry, so `distinct` is needed to show each
 
 </details>
 
-### 21. Average rating by machine type
+### 21. Average rating by machine type {#average-rating-by-machine-type}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -343,7 +343,7 @@ and matches what would be needed if using `sum` / `count` manually.
 
 </details>
 
-### 22. Raters per machine type
+### 22. Raters per machine type {#raters-per-machine-type}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -360,7 +360,7 @@ A left join keeps every machine even if no rating row matches.
 
 </details>
 
-### 23. Done surveys and ratings
+### 23. Done surveys and ratings {#done-surveys-and-ratings}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -377,7 +377,7 @@ Chaining two inner joins keeps only people who appear in both `survey` and `rati
 
 </details>
 
-### 24. Ratings on multiple machines
+### 24. Ratings on multiple machines {#ratings-on-multiple-machines}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -398,7 +398,7 @@ so a person rated the same machine twice is not double-counted.
 
 </details>
 
-### 25. Supervisors and their team size
+### 25. Supervisors and their team size {#supervisors-and-their-team-size}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -420,7 +420,7 @@ because they have no matching rows on the right-hand side.
 
 </details>
 
-### 26. People who have done surveys
+### 26. People who have done surveys {#people-who-have-done-surveys}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -439,7 +439,7 @@ but may appear many times in `survey`.
 
 </details>
 
-### 27. People who have never done a survey
+### 27. People who have never done a survey {#people-who-have-never-done-a-survey}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -456,7 +456,7 @@ the complement of question 26.
 
 </details>
 
-### 28. People with no machine ratings
+### 28. People with no machine ratings {#people-with-no-machine-ratings}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -473,7 +473,7 @@ regardless of whether the rating level is `null` or not.
 
 </details>
 
-### 29. Surveys done by supervisors
+### 29. Surveys done by supervisors {#surveys-done-by-supervisors}
 
 <details markdown="1">
 <summary>Answer</summary>
@@ -496,7 +496,7 @@ because `null` comparisons always produce `null`, not `true`.
 
 </details>
 
-### 30. Machine types with no non-null ratings
+### 30. Machine types with no non-null ratings {#machine-types-with-no-non-null-ratings}
 
 <details markdown="1">
 <summary>Answer</summary>
