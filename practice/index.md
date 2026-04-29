@@ -1,5 +1,7 @@
 # Practice Questions
 
+<p class="center">Yo, Cy - I got your homework for you</p>
+
 ## Using penguins.db
 
 ### 1. Show all penguins
