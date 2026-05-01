@@ -12,7 +12,7 @@ The reason is that SQL evaluates `where` row by row, deciding whether each row p
 
 ## Subqueries
 
-The solution is to write one query inside another. The inner query, called a **subquery**, is evaluated first, and its result is then used by the outer query.
+The solution is to write one query inside another. The inner query, called a [%g subquery "subquery" %], is evaluated first, and its result is then used by the outer query.
 
 ```sql
 select species, body_mass_g
@@ -28,7 +28,7 @@ The database evaluates this in two steps:
 1. It runs the inner query to find the average mass of all the penguins, which produces a single number.
 2. It uses that number in the outer query's `where` clause to filter for penguins whose mass is greater than that value.
 
-The parentheses around the inner query are required. Notice also that the subquery is a complete `select` statement: it has its own `from` clause and can reference the same tables as the outer query.
+The parentheses around the inner query are required. Notice also that the subquery is a complete `select` [%g statement "statement" %]: it has its own `from` clause and can reference the same tables as the outer query.
 
 Let's make the output more informative by also showing what the overall average is for comparison.
 
@@ -146,7 +146,7 @@ The inner query returns just Amal (the only person who calibrated). The outer qu
 
 ## Common Table Expressions
 
-Subqueries can be nested inside one another, but deeply nested queries are hard to read and understand. **Common table expressions** (also called CTEs) give us a way to write the same logic in a more readable form. Instead of putting one query inside another, we define a named temporary table at the top of our query using `with`, and then refer to it by name.
+Subqueries can be nested inside one another, but deeply nested queries are hard to read and understand. [%g common_table_expression "Common table expressions" %] (also called CTEs) give us a way to write the same logic in a more readable form. Instead of putting one query inside another, we define a named temporary table at the top of our query using `with`, and then refer to it by name.
 
 Here is the heavier-than-average query rewritten using a CTE:
 

@@ -12,7 +12,7 @@ select distinct island, species, sex from penguins;
 
 Notice the two blanks in the `sex` column, and the fact that its subtitle says there are 3 unique values. Those blanks show the special value `null`, which SQL uses to mean "I don't know". In this case, those values tell us that the scientists who collected the penguins didn't record the sex of some of the Adelie penguins on Dream and Torgersen islands.
 
-The most important thing about **null values** is that almost any operation that involves a `null` produces `null` as an answer. For example, we can use SQL as a very complicated desk calculator and ask, "What is 1 + 2?"
+The most important thing about [%g null "null values" %] is that almost any operation that involves a `null` produces `null` as an answer. For example, we can use SQL as a very complicated desk calculator and ask, "What is 1 + 2?"
 
 ```sql
 select 1 + 2 as result;
@@ -126,7 +126,7 @@ Some programmers find `null` very annoying. Instead of putting it in their table
 
 These tutorials avoid theory when they can, but a little bit will help understand how `null` works. In conventional logic, a statement is either true or false. If we have two statements `A` and `B`, then `A and B` is true when both are true, while `A or B` is true if either or both are true. These rules are sometimes referred to as **binary logic** (also called **Boolean logic**) because there are only two possible values.
 
-SQL is unusual among programming languages in using **ternary logic**, in which any statement can be true, false, or null. Since `null` is not `true`, `where` drops rows if the filter expression produces `null`.
+SQL is unusual among programming languages in using [%g ternary_logic "ternary logic" %], in which any statement can be true, false, or null. Since `null` is not `true`, `where` drops rows if the filter expression produces `null`.
 
 ## Check Understanding
 

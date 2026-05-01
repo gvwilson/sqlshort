@@ -6,7 +6,7 @@ This tutorial shows how to select values from a single table in a database using
 select * from penguins;
 ```
 
-Almost every **query** in SQL starts with the word `select`. The value immediately after it tells the database manager what we want to see. In this case, we use the shorthand `*` to mean "all the columns". We then say `from penguins` to tell the database manager which table we want to get the data from. The semi-colon at the end marks the end of the query.
+Almost every [%g query "query" %] in SQL starts with the word `select`. The value immediately after it tells the database manager what we want to see. In this case, we use the shorthand `*` to mean "all the columns". We then say `from penguins` to tell the database manager which table we want to get the data from. The semi-colon at the end marks the end of the query.
 
 Note that the database manager doesn't format the output nicely, draw the little distribution histograms above columns, or give us the page-forward/page-backward controls: all the credit for that belongs to the Marimo notebook.
 

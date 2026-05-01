@@ -1,6 +1,6 @@
 # Filtering
 
-The previous tutorial showed how to select specific columns from a database table, and how to page through the data that a query returns. However, people almost always **filter** data based on its properties rather than on its position in a table. To see how this works, let's look at the combinations of species, island, and sex in the `penguins` table.
+The previous tutorial showed how to select specific columns from a database table, and how to page through the data that a query returns. However, people almost always [%g filter "filter" %] data based on its properties rather than on its position in a table. To see how this works, let's look at the combinations of species, island, and sex in the `penguins` table.
 
 ```sql
 select distinct species, island, sex from penguins;
@@ -94,7 +94,7 @@ where ((species = 'Adelie') and (island = 'Biscoe')) or (species = 'Chinstrap');
 
 2. We can put `not` in front of a condition to invert its meaning. Use this to write a query that fetches the same rows as one with the condition `species != 'Chinstrap'`, but which uses `=` instead of `!=`.
 
-3. Does the expression `species not = 'Gentoo'` work?
+3. Does the [%g expression "expression" %] `species not = 'Gentoo'` work?
 
 4. Write a query to find all of the penguins whose bill length is greater than their bill depth.
 

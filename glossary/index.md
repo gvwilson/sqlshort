@@ -6,7 +6,7 @@
 :   A relationship between two tables in which each record from the first table
     matches exactly one record from the second and vice versa.
 
-<span id="1_to_many">1-to-many relation</span>
+<span id="one_to_many">1-to-many relation</span>
 :   A relationship between two tables in which each record from the first table
     matches zero or more records from the second,
     but each record from the second table matches exactly one record from the first.
@@ -42,7 +42,7 @@
 :   A starting point for recursion that does not depend on previous recursive calculations.
 
 <span id="blob">Binary Large Object</span> (blob)
-    Bytes that are handled as-is rather than being interpreted as numbers, text, or other data types.
+:   Bytes that are handled as-is rather than being interpreted as numbers, text, or other data types.
 
 ## C
 
@@ -51,10 +51,10 @@
     that clients interact with through network connections.
 
 <span id="comma_separated_values">comma-separated values</span> (CSV)
-    A text format for tabular data that uses commas to separate columns.
+:   A text format for tabular data that uses commas to separate columns.
 
 <span id="common_table_expression">common table expression</span> (CTE)
-    A temporary table created at the start of a query,
+:   A temporary table created at the start of a query,
     usually to simplify writing the query.
 
 <span id="consistent">consistent</span>
@@ -69,6 +69,10 @@
 
 <span id="cross_join">cross join</span>
 :   A join that creates the cross-product of rows from two tables.
+
+<span id="cte">common table expression</span> (CTE)
+:   A temporary table created at the start of a query,
+    usually to simplify writing the query.
 
 <span id="cursor">cursor</span>
 :   A reference to the current location in the results of an ongoing query.
@@ -85,7 +89,7 @@
 :   A collection of data that can be searched and retrieved.
 
 <span id="dbms">database management system</span> (DBMS)
-    A program that manages a particular kind of database.
+:   A program that manages a particular kind of database.
 
 <span id="denormalization">denormalization</span>
 :   To deliberately introduce duplication or other violate normal forms,
@@ -156,7 +160,7 @@
 :   A table that exists solely to enable information from two tables to be connected.
 
 <span id="json">JavaScript Object Notation</span> (JSON)
-    A text format for representing numbers, strings, lists, and key-value maps.
+:   A text format for representing numbers, strings, lists, and key-value maps.
 
 ## K
 
@@ -194,7 +198,7 @@
 ## O
 
 <span id="orm">object-relational mapper</span> (ORM)
-    A library that translates objects in a program into database queries
+:   A library that translates objects in a program into database queries
     and the results of those queries back into objects.
 
 ## P
@@ -227,7 +231,7 @@
     Every recursive CTE must have a base case and a recursive case.
 
 <span id="rdbms">relational database management system</span> (RDBMS)
-    A database management system that stores data in tables with columns and rows.
+:   A database management system that stores data in tables with columns and rows.
 
 <span id="right_outer_join">right outer join</span>
 :   A join that is guaranteed to keep all rows from the second (right) table.
@@ -278,7 +282,7 @@
     or insert (create) a new record if it doesn't.
 
 <span id="uri">Uniform Resource Identifier</span> (URI)
-    A string that identifies a resource (such as a web page or database)
+:   A string that identifies a resource (such as a web page or database)
     and the protocol used to access it.
 
 ## V

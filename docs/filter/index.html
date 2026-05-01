@@ -48,7 +48,7 @@
 </nav>
 <main id="main-content">
 <h1>Filtering</h1>
-<p>The previous tutorial showed how to select specific columns from a database table, and how to page through the data that a query returns. However, people almost always <strong>filter</strong> data based on its properties rather than on its position in a table. To see how this works, let's look at the combinations of species, island, and sex in the <code>penguins</code> table.</p>
+<p>The previous tutorial showed how to select specific columns from a database table, and how to page through the data that a query returns. However, people almost always <a class="gl-ref" href="../glossary/#filter">filter</a> data based on its properties rather than on its position in a table. To see how this works, let's look at the combinations of species, island, and sex in the <code>penguins</code> table.</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">island</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">penguins</span><span class="p">;</span>
 </code></pre></div>
 <h2>Equality</h2>
@@ -160,7 +160,7 @@
 <p>We can put <code>not</code> in front of a condition to invert its meaning. Use this to write a query that fetches the same rows as one with the condition <code>species != 'Chinstrap'</code>, but which uses <code>=</code> instead of <code>!=</code>.</p>
 </li>
 <li>
-<p>Does the expression <code>species not = 'Gentoo'</code> work?</p>
+<p>Does the <a class="gl-ref" href="../glossary/#expression">expression</a> <code>species not = 'Gentoo'</code> work?</p>
 </li>
 <li>
 <p>Write a query to find all of the penguins whose bill length is greater than their bill depth.</p>

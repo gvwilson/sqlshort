@@ -53,7 +53,7 @@
 <dt><span id="1_to_1">1-to-1 relation</span></dt>
 <dd>A relationship between two tables in which each record from the first table
 matches exactly one record from the second and vice versa.</dd>
-<dt><span id="1_to_many">1-to-many relation</span></dt>
+<dt><span id="one_to_many">1-to-many relation</span></dt>
 <dd>A relationship between two tables in which each record from the first table
 matches zero or more records from the second,
 but each record from the second table matches exactly one record from the first.</dd>
@@ -81,21 +81,19 @@ such as maximum or addition.</dd>
 in logarithmic time.</dd>
 <dt><span id="base_case">base case</span></dt>
 <dd>A starting point for recursion that does not depend on previous recursive calculations.</dd>
+<dt><span id="blob">Binary Large Object</span> (blob)</dt>
+<dd>Bytes that are handled as-is rather than being interpreted as numbers, text, or other data types.</dd>
 </dl>
-<p><span id="blob">Binary Large Object</span> (blob)
-    Bytes that are handled as-is rather than being interpreted as numbers, text, or other data types.</p>
 <h2>C</h2>
 <dl>
 <dt><span id="client_server_db">client-server database</span></dt>
 <dd>A database that is managed by its own server process
 that clients interact with through network connections.</dd>
-</dl>
-<p><span id="comma_separated_values">comma-separated values</span> (CSV)
-    A text format for tabular data that uses commas to separate columns.</p>
-<p><span id="common_table_expression">common table expression</span> (CTE)
-    A temporary table created at the start of a query,
-    usually to simplify writing the query.</p>
-<dl>
+<dt><span id="comma_separated_values">comma-separated values</span> (CSV)</dt>
+<dd>A text format for tabular data that uses commas to separate columns.</dd>
+<dt><span id="common_table_expression">common table expression</span> (CTE)</dt>
+<dd>A temporary table created at the start of a query,
+usually to simplify writing the query.</dd>
 <dt><span id="consistent">consistent</span></dt>
 <dd>A state in which all constraints are satisfied,
 e.g.,
@@ -106,6 +104,9 @@ and all foreign keys refer to primary keys.</dd>
 and which must therefore be executed once for each of those values.</dd>
 <dt><span id="cross_join">cross join</span></dt>
 <dd>A join that creates the cross-product of rows from two tables.</dd>
+<dt><span id="cte">common table expression</span> (CTE)</dt>
+<dd>A temporary table created at the start of a query,
+usually to simplify writing the query.</dd>
 <dt><span id="cursor">cursor</span></dt>
 <dd>A reference to the current location in the results of an ongoing query.</dd>
 </dl>
@@ -118,10 +119,8 @@ from one set of tables to a new set
 or from one DBMS to another.</dd>
 <dt><span id="database">database</span></dt>
 <dd>A collection of data that can be searched and retrieved.</dd>
-</dl>
-<p><span id="dbms">database management system</span> (DBMS)
-    A program that manages a particular kind of database.</p>
-<dl>
+<dt><span id="dbms">database management system</span> (DBMS)</dt>
+<dd>A program that manages a particular kind of database.</dd>
 <dt><span id="denormalization">denormalization</span></dt>
 <dd>To deliberately introduce duplication or other violate normal forms,
 typically to improve query performance.</dd>
@@ -177,9 +176,9 @@ SQL's <code>or</code> is inclusive.</dd>
 <dd>The criteria used to decide which rows from each table in a join are combined.</dd>
 <dt><span id="join_table">join table</span></dt>
 <dd>A table that exists solely to enable information from two tables to be connected.</dd>
+<dt><span id="json">JavaScript Object Notation</span> (JSON)</dt>
+<dd>A text format for representing numbers, strings, lists, and key-value maps.</dd>
 </dl>
-<p><span id="json">JavaScript Object Notation</span> (JSON)
-    A text format for representing numbers, strings, lists, and key-value maps.</p>
 <h2>K</h2>
 <h2>L</h2>
 <dl>
@@ -209,9 +208,11 @@ may match zero or more records from the second and vice versa.</dd>
 <dd>A special value representing "not known".</dd>
 </dl>
 <h2>O</h2>
-<p><span id="orm">object-relational mapper</span> (ORM)
-    A library that translates objects in a program into database queries
-    and the results of those queries back into objects.</p>
+<dl>
+<dt><span id="orm">object-relational mapper</span> (ORM)</dt>
+<dd>A library that translates objects in a program into database queries
+and the results of those queries back into objects.</dd>
+</dl>
 <h2>P</h2>
 <dl>
 <dt><span id="path_expression">path expression</span></dt>
@@ -236,10 +237,8 @@ and then translates those objects into a SQL string.</dd>
 <dt><span id="recursive_common_table_expression">recursive CTE</span></dt>
 <dd>A common table expression that refers to itself.
 Every recursive CTE must have a base case and a recursive case.</dd>
-</dl>
-<p><span id="rdbms">relational database management system</span> (RDBMS)
-    A database management system that stores data in tables with columns and rows.</p>
-<dl>
+<dt><span id="rdbms">relational database management system</span> (RDBMS)</dt>
+<dd>A database management system that stores data in tables with columns and rows.</dd>
 <dt><span id="right_outer_join">right outer join</span></dt>
 <dd>A join that is guaranteed to keep all rows from the second (right) table.
 Columns from the left table are filled with actual values if available
@@ -280,10 +279,10 @@ typically insertion or deletion.</dd>
 <dt><span id="upsert">upsert</span></dt>
 <dd>To update a record if it exists
 or insert (create) a new record if it doesn't.</dd>
+<dt><span id="uri">Uniform Resource Identifier</span> (URI)</dt>
+<dd>A string that identifies a resource (such as a web page or database)
+and the protocol used to access it.</dd>
 </dl>
-<p><span id="uri">Uniform Resource Identifier</span> (URI)
-    A string that identifies a resource (such as a web page or database)
-    and the protocol used to access it.</p>
 <h2>V</h2>
 <dl>
 <dt><span id="vectorization">vectorization</span></dt>

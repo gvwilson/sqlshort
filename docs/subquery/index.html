@@ -55,7 +55,7 @@
 </code></pre></div>
 <p>The reason is that SQL evaluates <code>where</code> row by row, deciding whether each row passes the test, but it can only calculate <code>avg(body_mass_g)</code> after looking at all the rows. We need a way to calculate the average first and then use that result in our filter.</p>
 <h2>Subqueries</h2>
-<p>The solution is to write one query inside another. The inner query, called a <strong>subquery</strong>, is evaluated first, and its result is then used by the outer query.</p>
+<p>The solution is to write one query inside another. The inner query, called a <a class="gl-ref" href="../glossary/#subquery">subquery</a>, is evaluated first, and its result is then used by the outer query.</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">select</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">body_mass_g</span>
 <span class="k">from</span><span class="w"> </span><span class="n">penguins</span>
 <span class="k">where</span><span class="w"> </span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span>
@@ -68,7 +68,7 @@
 <li>It runs the inner query to find the average mass of all the penguins, which produces a single number.</li>
 <li>It uses that number in the outer query's <code>where</code> clause to filter for penguins whose mass is greater than that value.</li>
 </ol>
-<p>The parentheses around the inner query are required. Notice also that the subquery is a complete <code>select</code> statement: it has its own <code>from</code> clause and can reference the same tables as the outer query.</p>
+<p>The parentheses around the inner query are required. Notice also that the subquery is a complete <code>select</code> <a class="gl-ref" href="../glossary/#statement">statement</a>: it has its own <code>from</code> clause and can reference the same tables as the outer query.</p>
 <p>Let's make the output more informative by also showing what the overall average is for comparison.</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">select</span>
 <span class="w">    </span><span class="n">species</span><span class="p">,</span>
@@ -212,7 +212,7 @@
 </ol>
 </div>
 <h2>Common Table Expressions</h2>
-<p>Subqueries can be nested inside one another, but deeply nested queries are hard to read and understand. <strong>Common table expressions</strong> (also called CTEs) give us a way to write the same logic in a more readable form. Instead of putting one query inside another, we define a named temporary table at the top of our query using <code>with</code>, and then refer to it by name.</p>
+<p>Subqueries can be nested inside one another, but deeply nested queries are hard to read and understand. <a class="gl-ref" href="../glossary/#common_table_expression">Common table expressions</a> (also called CTEs) give us a way to write the same logic in a more readable form. Instead of putting one query inside another, we define a named temporary table at the top of our query using <code>with</code>, and then refer to it by name.</p>
 <p>Here is the heavier-than-average query rewritten using a CTE:</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">with</span><span class="w"> </span><span class="n">avg_mass</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">body_mass_g</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">threshold</span>

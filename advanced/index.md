@@ -4,7 +4,7 @@ This lesson introduces five advanced features of SQL: views (saved queries that 
 
 ## Views
 
-A **view** is a saved query that can be used in other queries just like a real table. Views are useful when a query is complex, used frequently, or needs to be shared across different parts of an application.
+A [%g view "view" %] is a saved query that can be used in other queries just like a real table. Views are useful when a query is complex, used frequently, or needs to be shared across different parts of an application.
 
 Suppose we often need to work with penguins that weigh 4500g or more. Instead of repeating the filter in every query, we can define a view:
 
@@ -43,7 +43,7 @@ drop view if exists heavy_penguins;
 
 ## Indexes
 
-When a database searches a table for rows matching a `where` condition, it normally scans every row in the table. For small tables this is fine, but for large tables it is slow. An **index** is an auxiliary data structure that lets the database jump directly to matching rows, spending storage space to buy query speed.
+When a database searches a table for rows matching a `where` condition, it normally scans every row in the table. For small tables this is fine, but for large tables it is slow. An [%g index "index" %] is an auxiliary data structure that lets the database jump directly to matching rows, spending storage space to buy query speed.
 
 We can see what the database plans to do using `explain query plan`:
 
@@ -103,7 +103,7 @@ Transactions are essential any time one logical operation requires multiple SQL 
 
 ## Triggers
 
-A **trigger** is a set of SQL statements that the database runs automatically before or after a specific operation (`insert`, `update`, or `delete`) on a table. Triggers are useful for enforcing rules that are too complex for a simple constraint, or for automatically maintaining derived data.
+A [%g trigger "trigger" %] is a set of SQL statements that the database runs automatically before or after a specific operation (`insert`, `update`, or `delete`) on a table. Triggers are useful for enforcing rules that are too complex for a simple constraint, or for automatically maintaining derived data.
 
 The example below keeps a running count of sightings per species. We have two tables: `sighting` (where new observations are recorded) and `sighting_count` (which stores totals). We define a trigger that fires after every insert into `sighting` and increments the appropriate count.
 
@@ -155,7 +155,7 @@ Triggers add processing overhead to every operation that fires them, so use them
 
 ## Window Functions
 
-Aggregation functions like `sum` and `avg` collapse a group of rows into a single result row. **Window functions** compute a value for each row using information from other rows, without collapsing the result. The set of rows a window function looks at is called its **window**, defined with an `over` clause.
+Aggregation functions like `sum` and `avg` collapse a group of rows into a single result row. [%g window_func "Window functions" %] compute a value for each row using information from other rows, without collapsing the result. The set of rows a window function looks at is called its **window**, defined with an `over` clause.
 
 The simplest window function is `row_number`, which numbers each row within a defined order:
 

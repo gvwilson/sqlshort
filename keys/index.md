@@ -4,7 +4,7 @@ The previous tutorial explained how to combine information from two tables using
 
 ![survey tables](./survey_tables.svg)
 
-Let's start with `person`, which has four columns: `person_id`, `personal`, `family`, and `supervisor_id` (which we will discuss in the next section). `person_id` is shown in ***bold italics*** to indicate that it is the table's **primary key**: each row in the table has a non-`null` `person_id`, and each of those values is unique. These values can therefore be used to uniquely identify specific rows in the table. We can check that by selecting all of the people and inspecting the `person_id` values by eye:
+Let's start with `person`, which has four columns: `person_id`, `personal`, `family`, and `supervisor_id` (which we will discuss in the next section). `person_id` is shown in ***bold italics*** to indicate that it is the table's [%g primary_key "primary key" %]: each row in the table has a non-`null` `person_id`, and each of those values is unique. These values can therefore be used to uniquely identify specific rows in the table. We can check that by selecting all of the people and inspecting the `person_id` values by eye:
 
 ```sql
 select person_id from person;
@@ -20,10 +20,10 @@ select
 from person;
 ```
 
-Now let's take a look at the `survey` table. Each survey has a survey ID, the ID of the person who did the survey, and the survey's start and end dates. `survey_id` is in ***bold italics***, which tells us that each survey has a unique ID. `person_id`, on the other hand, is just in *italics*, and there's an arrow connecting it to the `person` table's primary key, which is also called `person_id`. The use of italics and the arrow signals that `survey.person_id` is a **foreign key**, i.e., a value stored in one table that references the primary key of another table. This relationship tells us that:
+Now let's take a look at the `survey` table. Each survey has a survey ID, the ID of the person who did the survey, and the survey's start and end dates. `survey_id` is in ***bold italics***, which tells us that each survey has a unique ID. `person_id`, on the other hand, is just in *italics*, and there's an arrow connecting it to the `person` table's primary key, which is also called `person_id`. The use of italics and the arrow signals that `survey.person_id` is a [%g foreign_key "foreign key" %], i.e., a value stored in one table that references the primary key of another table. This relationship tells us that:
 
 1. It makes sense to use `survey.person_id = person.person_id` as a condition in a join because every `survey.person_id` is guaranteed to refer to an existing `person.person_id`.
-2. Several surveys might refer to the same person (or equivalently, one person might have done several surveys). This is called a **one-to-many relationship**.
+2. Several surveys might refer to the same person (or equivalently, one person might have done several surveys). This is called a [%g one_to_many "one-to-many relationship" %].
 
 Let's write some queries. Who is in the `person` table?
 
@@ -114,7 +114,7 @@ from person inner join person
 on person.person_id = person.supervisor_id;
 ```
 
-The problem is that `person.person_id` and `person.supervisor_id` are ambiguous: are we referring to the left-hand use of the `person` table or the right-hand use? To resolve this, we give each copy of the table an **alias** using `as`, just as we gave columns names using `as`. We also have to specify the columns that we want using two-part `table.column` notation.
+The problem is that `person.person_id` and `person.supervisor_id` are ambiguous: are we referring to the left-hand use of the `person` table or the right-hand use? To resolve this, we give each copy of the table an [%g alias "alias" %] using `as`, just as we gave columns names using `as`. We also have to specify the columns that we want using two-part `table.column` notation.
 
 ```sql
 select
@@ -147,9 +147,9 @@ order by pa.family, pa.personal;
 
 ## Many-to-Many Relationships
 
-Each survey is done by one person, which means that people have a one-to-many relationship with surveys. However, any number of people can have ratings for any number of machines and vice versa, which means these two tables have a **many-to-many relationship**. These relationships can be hard to express in a table: if, for example, we knew that people never have ratings for more than three machines, we could add `machine_1`, `machine_2`, and `machine_3` columns to `person`, but (a) we would have to check several columns if we wanted to find a particular machine, and (b) we would have to redesign our table if the rules changed and people could have ratings for four or five machines.
+Each survey is done by one person, which means that people have a one-to-many relationship with surveys. However, any number of people can have ratings for any number of machines and vice versa, which means these two tables have a [%g many_to_many "many-to-many relationship" %]. These relationships can be hard to express in a table: if, for example, we knew that people never have ratings for more than three machines, we could add `machine_1`, `machine_2`, and `machine_3` columns to `person`, but (a) we would have to check several columns if we wanted to find a particular machine, and (b) we would have to redesign our table if the rules changed and people could have ratings for four or five machines.
 
-A better approach is to create another intermediate table that stores the relationship between the two tables we're interested in. Such a table is sometimes called a **join table** because its main purpose is to allow us to join two other tables. The `rating` table in our database is an example of a join table. Each row stores a foreign key into `person` and a foreign key into `machine`, which shows that the person has some relationship to the machine. The table also stores `level`, which is the actual rating (or `null`), but it is quite common for join tables to only store pairs of foreign keys.
+A better approach is to create another intermediate table that stores the relationship between the two tables we're interested in. Such a table is sometimes called a [%g join_table "join table" %] because its main purpose is to allow us to join two other tables. The `rating` table in our database is an example of a join table. Each row stores a foreign key into `person` and a foreign key into `machine`, which shows that the person has some relationship to the machine. The table also stores `level`, which is the actual rating (or `null`), but it is quite common for join tables to only store pairs of foreign keys.
 
 So, which people have ratings for which machines?
 

@@ -115,11 +115,11 @@
 </table>
 </div>
 </div>
-<p>We want to know how many credits each student has earned. The first step in answering this is to <strong>join</strong> the tables together.</p>
+<p>We want to know how many credits each student has earned. The first step in answering this is to <a class="gl-ref" href="../glossary/#join">join</a> the tables together.</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">select</span><span class="w"> </span><span class="o">*</span>
 <span class="k">from</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="k">work</span><span class="p">;</span>
 </code></pre></div>
-<p>The <code>join</code> operation creates a temporary table in memory by combining every row of <code>job</code> with every row of <code>work</code>. Since <code>job</code> has two rows and <code>work</code> has seven, the temporary table has 2×7=14 rows.</p>
+<p>The <code>join</code> operation creates a <a class="gl-ref" href="../glossary/#temporary_table">temporary table</a> in memory by combining every row of <code>job</code> with every row of <code>work</code>. Since <code>job</code> has two rows and <code>work</code> has seven, the temporary table has 2×7=14 rows.</p>
 <p>Some of these rows are useful: the first, for example, tells us that Amal did some calibration, and that calibrating is worth 1.5 credits. The second, however, combines information about calibrating with the fact that Amal did some cleaning. We can get rid of the rows that aren't useful by filtering with <code>where</code>.</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">select</span><span class="w"> </span><span class="o">*</span>
 <span class="k">from</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="k">work</span>
@@ -149,7 +149,7 @@
 <span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">work</span><span class="p">.</span><span class="n">person</span><span class="p">;</span>
 </code></pre></div>
 <h2>Left Joins</h2>
-<p>The query above shows us how many credits Amal and Gita have earned, but doesn't show anything for Madhi. Ideally, we'd like a row showing that she has earned zero credits. To get this, we need to use a different kind of join called a <strong>left join</strong>. A left join is created by following these rules:</p>
+<p>The query above shows us how many credits Amal and Gita have earned, but doesn't show anything for Madhi. Ideally, we'd like a row showing that she has earned zero credits. To get this, we need to use a different kind of join called a <a class="gl-ref" href="../glossary/#left_outer_join">left join</a>. A left join is created by following these rules:</p>
 <ol>
 <li>If the row from the left-hand table matches one or more rows from the right-hand table, combine them as an inner join would.</li>
 <li>If the row from the left-hand table <em>doesn't</em> match any rows from the right-hand table, create one row in the result with the values from the left row and <code>null</code> where the values from the right-hand table would be.</li>

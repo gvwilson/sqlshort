@@ -50,7 +50,7 @@
 <h1>Advanced Features</h1>
 <p>This lesson introduces five advanced features of SQL: views (saved queries that behave like tables), indexes (data structures that make queries faster), transactions (groups of changes that succeed or fail together), triggers (automatic actions that fire when data changes), and window functions (calculations that look across rows without collapsing them into groups).</p>
 <h2>Views</h2>
-<p>A <strong>view</strong> is a saved query that can be used in other queries just like a real table. Views are useful when a query is complex, used frequently, or needs to be shared across different parts of an application.</p>
+<p>A <a class="gl-ref" href="../glossary/#view">view</a> is a saved query that can be used in other queries just like a real table. Views are useful when a query is complex, used frequently, or needs to be shared across different parts of an application.</p>
 <p>Suppose we often need to work with penguins that weigh 4500g or more. Instead of repeating the filter in every query, we can define a view:</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">heavy_penguins</span><span class="w"> </span><span class="k">as</span>
 <span class="k">select</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">island</span><span class="p">,</span><span class="w"> </span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span>
@@ -80,7 +80,7 @@
 </ol>
 </div>
 <h2>Indexes</h2>
-<p>When a database searches a table for rows matching a <code>where</code> condition, it normally scans every row in the table. For small tables this is fine, but for large tables it is slow. An <strong>index</strong> is an auxiliary data structure that lets the database jump directly to matching rows, spending storage space to buy query speed.</p>
+<p>When a database searches a table for rows matching a <code>where</code> condition, it normally scans every row in the table. For small tables this is fine, but for large tables it is slow. An <a class="gl-ref" href="../glossary/#index">index</a> is an auxiliary data structure that lets the database jump directly to matching rows, spending storage space to buy query speed.</p>
 <p>We can see what the database plans to do using <code>explain query plan</code>:</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">explain</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="n">plan</span>
 <span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">penguins</span>
@@ -123,7 +123,7 @@
 </ol>
 </div>
 <h2>Triggers</h2>
-<p>A <strong>trigger</strong> is a set of SQL statements that the database runs automatically before or after a specific operation (<code>insert</code>, <code>update</code>, or <code>delete</code>) on a table. Triggers are useful for enforcing rules that are too complex for a simple constraint, or for automatically maintaining derived data.</p>
+<p>A <a class="gl-ref" href="../glossary/#trigger">trigger</a> is a set of SQL statements that the database runs automatically before or after a specific operation (<code>insert</code>, <code>update</code>, or <code>delete</code>) on a table. Triggers are useful for enforcing rules that are too complex for a simple constraint, or for automatically maintaining derived data.</p>
 <p>The example below keeps a running count of sightings per species. We have two tables: <code>sighting</code> (where new observations are recorded) and <code>sighting_count</code> (which stores totals). We define a trigger that fires after every insert into <code>sighting</code> and increments the appropriate count.</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">sighting</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">species</span><span class="w"> </span><span class="nb">text</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
@@ -167,7 +167,7 @@
 </ol>
 </div>
 <h2>Window Functions</h2>
-<p>Aggregation functions like <code>sum</code> and <code>avg</code> collapse a group of rows into a single result row. <strong>Window functions</strong> compute a value for each row using information from other rows, without collapsing the result. The set of rows a window function looks at is called its <strong>window</strong>, defined with an <code>over</code> clause.</p>
+<p>Aggregation functions like <code>sum</code> and <code>avg</code> collapse a group of rows into a single result row. <a class="gl-ref" href="../glossary/#window_func">Window functions</a> compute a value for each row using information from other rows, without collapsing the result. The set of rows a window function looks at is called its <strong>window</strong>, defined with an <code>over</code> clause.</p>
 <p>The simplest window function is <code>row_number</code>, which numbers each row within a defined order:</p>
 <div class="codehilite"><pre class="" tabindex="0"><span></span><code><span class="k">select</span>
 <span class="w">    </span><span class="n">species</span><span class="p">,</span>

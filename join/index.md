@@ -34,14 +34,14 @@ The `jobs` database has two tables. The first, called `job`, shows the credits t
 </div>
 </div>
 
-We want to know how many credits each student has earned. The first step in answering this is to **join** the tables together.
+We want to know how many credits each student has earned. The first step in answering this is to [%g join "join" %] the tables together.
 
 ```sql
 select *
 from job join work;
 ```
 
-The `join` operation creates a temporary table in memory by combining every row of `job` with every row of `work`. Since `job` has two rows and `work` has seven, the temporary table has 2×7=14 rows.
+The `join` operation creates a [%g temporary_table "temporary table" %] in memory by combining every row of `job` with every row of `work`. Since `job` has two rows and `work` has seven, the temporary table has 2×7=14 rows.
 
 Some of these rows are useful: the first, for example, tells us that Amal did some calibration, and that calibrating is worth 1.5 credits. The second, however, combines information about calibrating with the fact that Amal did some cleaning. We can get rid of the rows that aren't useful by filtering with `where`.
 
@@ -84,7 +84,7 @@ group by work.person;
 
 ## Left Joins
 
-The query above shows us how many credits Amal and Gita have earned, but doesn't show anything for Madhi. Ideally, we'd like a row showing that she has earned zero credits. To get this, we need to use a different kind of join called a **left join**. A left join is created by following these rules:
+The query above shows us how many credits Amal and Gita have earned, but doesn't show anything for Madhi. Ideally, we'd like a row showing that she has earned zero credits. To get this, we need to use a different kind of join called a [%g left_outer_join "left join" %]. A left join is created by following these rules:
 
 1. If the row from the left-hand table matches one or more rows from the right-hand table, combine them as an inner join would.
 2. If the row from the left-hand table _doesn't_ match any rows from the right-hand table, create one row in the result with the values from the left row and `null` where the values from the right-hand table would be.

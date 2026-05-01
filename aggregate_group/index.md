@@ -1,6 +1,6 @@
 # Aggregating and Grouping
 
-The queries we wrote in the previous two tutorials operated on each row separately. We often want to ask questions about groups of rows, such as "how heavy is the largest penguin we weighed?" or "how many Gentoo penguins did we see?" This tutorial looks first at how to write queries that **aggregate** data, and then at how to calculate aggregate values for several subsets of our data simultaneously.
+The queries we wrote in the previous two tutorials operated on each row separately. We often want to ask questions about [%g group "groups" %] of rows, such as "how heavy is the largest penguin we weighed?" or "how many Gentoo penguins did we see?" This tutorial looks first at how to write queries that [%g aggregation "aggregate" %] data, and then at how to calculate aggregate values for several subsets of our data simultaneously.
 
 ## Aggregation
 
@@ -10,7 +10,7 @@ Let's start by finding out how heavy the heaviest penguin in our dataset is. To 
 select max(body_mass_g) as heaviest from penguins;
 ```
 
-The query below shows the six most commonly used aggregation functions in SQL applied to different columns of the penguins data.
+The query below shows the six most commonly used [%g aggregation_func "aggregation functions" %] in SQL applied to different columns of the penguins data.
 
 ```sql
 select
