@@ -48,7 +48,7 @@ We can do all of the usual comparisons in SQL:
 | greater than or equal | `>=` | `flipper_length_mm >= 200.0` |
 | greater than | `>` | `body_mass_g > 3300` |
 
-Comparing numbers is straightforward. When we compare text, the comparison uses dictionary order: A is less than B, AA is than AB, and so on.
+Comparing numbers is straightforward. When we compare text, the comparison uses dictionary order: A is less than B, AA is less than AB, and so on.
 
 <div class="callout" markdown="1">
 
@@ -100,7 +100,7 @@ where ((species = 'Adelie') and (island = 'Biscoe')) or (species = 'Chinstrap');
 
 5. Write another query to find all of the penguins whose bill length is less than their bill depth. What do you notice about the output of this query?
 
-6. The previous tutorial showed how to do calculations on the fly to (for example) produce a column called `mass_kg` showing the body mass of each penguin in kilograms. Can these on-the-fly columns be used in `where` conditions? To find out, write a query that finds all of the penguins that weight more than 4.0 kg.
+6. The previous tutorial showed how to do calculations on the fly to (for example) produce a column called `mass_kg` showing the body mass of each penguin in kilograms. Can these on-the-fly columns be used in `where` conditions? To find out, write a query that finds all of the penguins that weigh more than 4.0 kg.
 
 </div>
 
