@@ -87,7 +87,7 @@ select * from person order by family, personal collate 'es_ES';
 
 2. Which people have done 17 or more surveys?
 
-3. Just as `sum` adds up all the values in a column, `group_concat` concatenates all the text in a column. For example, if the column is called `name`, then `select group_concat(name, ':')` joins all the values in `name` with colons. Use this to write a query that generates two columns: a person's full name, and a comma-separated list of the IDs of the survey that person has done.
+3. Just as `sum` adds up all the values in a column, `group_concat` concatenates all the text in a column. For example, if the column is called `name`, then `select group_concat(name, ':')` joins all the values in `name` with colons. Use this to write a query that generates two columns: a person's full name, and a comma-separated list of the IDs of the surveys that person has done.
 
 4. Explain what the following query produces and why.
 
