@@ -31,7 +31,7 @@ group by category;
 
 1. Modify the query above to use a threshold of 3500g instead of 4000g. How does the split change?
 
-2. Write a query that labels each penguin's flipper as `'long'` if is 200mm long or more and `'short'` otherwise. How many long-flippered penguins are there in each species?
+2. Write a query that labels each penguin's flipper as `'long'` if it is 200mm long or more and `'short'` otherwise. How many long-flippered penguins are there in each species?
 
 3. Can the value produced by `iif` be used in a `where` clause? Try it and explain the result.
 
