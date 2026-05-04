@@ -101,7 +101,7 @@ Let's trace this query's execution step by step:
 
 1. The `(Amal, calibrate)` row from `work` matches the `(calibrate, 1.5)` row from `job`, so that is the first row of output.
 2. Similarly, the `(Amal, clean)` row matches the `(clean, 0.5)` row, so we get the second row of output.
-3. But `(Amal, complain)` _doesn't_ match anything from `job`, so we get a row with the values from the left table (`Amal` and `complain`) and `null` for `name` and `work`.
+3. But `(Amal, complain)` _doesn't_ match anything from `job`, so we get a row with the values from the left table (`Amal` and `complain`) and `null` for `name` and `credits`.
 4. We then get two rows for Gita cleaning because there's a match…
 5. …and two rows with `null` values for Gita and Madhi complaining because there isn't.
 

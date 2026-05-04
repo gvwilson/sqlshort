@@ -48,7 +48,7 @@ We can do all of the usual comparisons in SQL:
 | greater than or equal | `>=` | `flipper_length_mm >= 200.0` |
 | greater than | `>` | `body_mass_g > 3300` |
 
-Comparing numbers is straightforward. When we compare text, the comparison uses dictionary order: A is less than B, AA is than AB, and so on.
+Comparing numbers is straightforward. When we compare text, the comparison uses dictionary order: A is less than B, AA is less than AB, and so on.
 
 <div class="callout" markdown="1">
 
@@ -67,7 +67,7 @@ select * from penguins
 where species = 'Gentoo' and body_mass_g > 6000.0;
 ```
 
-If we use `or`, we get rows where *either or both* condition is true. This is different from common English usage: if you tell a child that they can have an ice cream cone or a chocolate bar, you mean "either/or". When you use `or` in SQL, on the other hand, it means "if any of the conditions is true". For example, the query below gets all of the penguins on Biscoe island, as well as all of the Gentoo penguins. Some penguins satisfy both conditions (the Adelie penguins on Biscoe island), some satisfy just one (the Adelies on Torgersen and the Gentoos on Biscoe). Penguins that don't satisfy either, like Chinstrap penguins on Dream island, don't show up at all.
+If we use `or`, we get rows where *either or both* condition is true. This is different from common English usage: if you tell a child that they can have an ice cream cone or a chocolate bar, you mean "either/or". When you use `or` in SQL, on the other hand, it means "if any of the conditions is true". For example, the query below gets all of the penguins on Biscoe island, as well as all of the Adelie penguins. Some penguins satisfy both conditions (the Adelie penguins on Biscoe island), some satisfy just one (the Adelies on Torgersen and the Gentoos on Biscoe). Penguins that don't satisfy either, like Chinstrap penguins on Dream island, don't show up at all.
 
 ```sql
 select distinct species, island from penguins
@@ -100,7 +100,7 @@ where ((species = 'Adelie') and (island = 'Biscoe')) or (species = 'Chinstrap');
 
 5. Write another query to find all of the penguins whose bill length is less than their bill depth. What do you notice about the output of this query?
 
-6. The previous tutorial showed how to do calculations on the fly to (for example) produce a column called `mass_kg` showing the body mass of each penguin in kilograms. Can these on-the-fly columns be used in `where` conditions? To find out, write a query that finds all of the penguins that weight more than 4.0 kg.
+6. The previous tutorial showed how to do calculations on the fly to (for example) produce a column called `mass_kg` showing the body mass of each penguin in kilograms. Can these on-the-fly columns be used in `where` conditions? To find out, write a query that finds all of the penguins that weigh more than 4.0 kg.
 
 </div>
 

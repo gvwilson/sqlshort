@@ -92,7 +92,7 @@
 :   A program that manages a particular kind of database.
 
 <span id="denormalization">denormalization</span>
-:   To deliberately introduce duplication or other violate normal forms,
+:   To deliberately introduce duplication or otherwise violate normal forms,
     typically to improve query performance.
 
 <span id="durable">durable</span>
