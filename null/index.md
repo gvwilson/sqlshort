@@ -1,6 +1,6 @@
 # Missing Data
 
-The biggest challenge people facing when using databases isn't remembering the order of clauses in a SQL query. The biggest challenge is handling missing data. This tutorial builds on the filtering introduced in the previous one to show how to manage this in our queries.
+The biggest challenge people face when using databases isn't remembering the order of clauses in a SQL query. The biggest challenge is handling missing data. This tutorial builds on the filtering introduced in the previous one to show how to manage this in our queries.
 
 ## Null
 
@@ -120,11 +120,11 @@ where (sex != 'MALE') and (sex != 'FEMALE');
 
 </div>
 
-Some programmers find `null` very annoying. Instead of putting it in their tables, they use marker values like -1 or `"NA"` to signal missing data. Doing this almost always leads to problems. For example, if we are calculating the average age of people who are 17, 19, 21, and and unknown number of years old, the sensible thing to do is add the values we know (the 17, 19, and 21) and then divide by 3. As we will see in the next tutorial, SQL will do this for us automatically _if_ we have used `null` to represent the unknown age. If we use -1, on the other hand, it's all too easy to calculate (17 + 19 + 21 - 1) / 4 and get an average age of 14. We could use `where` to filter out the -1 ages before doing the sum, but (a) we'd have to know to do that and (b) we'd have to know that this programmer used -1 instead of -999999 or something else to mean "I don't know". While it takes a bit of getting used to, it's (almost) always better to use `null` when there are holes in our data.
+Some programmers find `null` very annoying. Instead of putting it in their tables, they use marker values like -1 or `"NA"` to signal missing data. Doing this almost always leads to problems. For example, if we are calculating the average age of people who are 17, 19, 21, and an unknown number of years old, the sensible thing to do is add the values we know (the 17, 19, and 21) and then divide by 3. As we will see in the next tutorial, SQL will do this for us automatically _if_ we have used `null` to represent the unknown age. If we use -1, on the other hand, it's all too easy to calculate (17 + 19 + 21 - 1) / 4 and get an average age of 14. We could use `where` to filter out the -1 ages before doing the sum, but (a) we'd have to know to do that and (b) we'd have to know that this programmer used -1 instead of -999999 or something else to mean "I don't know". While it takes a bit of getting used to, it's (almost) always better to use `null` when there are holes in our data.
 
 ## Ternary Logic
 
-These tutorials avoid theory when they can, but a little bit will help understand how `null` works. In conventional logic, a statement is either true or false. If we have two statements `A` and `B`, then `A and B` is true when both are true, while `A or B` is true if either or both are true. These rules are sometimes referred to as **binary logic** (also called **Boolean logic**) because there are only two possible values.
+These tutorials avoid theory when they can, but a little bit will help us understand how `null` works. In conventional logic, a statement is either true or false. If we have two statements `A` and `B`, then `A and B` is true when both are true, while `A or B` is true if either or both are true. These rules are sometimes referred to as **binary logic** (also called **Boolean logic**) because there are only two possible values.
 
 SQL is unusual among programming languages in using [%g ternary_logic "ternary logic" %], in which any statement can be true, false, or null. Since `null` is not `true`, `where` drops rows if the filter expression produces `null`.
 
