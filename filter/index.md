@@ -67,7 +67,7 @@ select * from penguins
 where species = 'Gentoo' and body_mass_g > 6000.0;
 ```
 
-If we use `or`, we get rows where *either or both* condition is true. This is different from common English usage: if you tell a child that they can have an ice cream cone or a chocolate bar, you mean "either/or". When you use `or` in SQL, on the other hand, it means "if any of the conditions is true". For example, the query below gets all of the penguins on Biscoe island, as well as all of the Gentoo penguins. Some penguins satisfy both conditions (the Adelie penguins on Biscoe island), some satisfy just one (the Adelies on Torgersen and the Gentoos on Biscoe). Penguins that don't satisfy either, like Chinstrap penguins on Dream island, don't show up at all.
+If we use `or`, we get rows where *either or both* condition is true. This is different from common English usage: if you tell a child that they can have an ice cream cone or a chocolate bar, you mean "either/or". When you use `or` in SQL, on the other hand, it means "if any of the conditions is true". For example, the query below gets all of the penguins on Biscoe island, as well as all of the Adelie penguins. Some penguins satisfy both conditions (the Adelie penguins on Biscoe island), some satisfy just one (the Adelies on Torgersen and the Gentoos on Biscoe). Penguins that don't satisfy either, like Chinstrap penguins on Dream island, don't show up at all.
 
 ```sql
 select distinct species, island from penguins
