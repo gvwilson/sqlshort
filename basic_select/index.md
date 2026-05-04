@@ -117,7 +117,7 @@ from penguins
 limit 10;
 ```
 
-The query above shows both the mass in grams and the mass in kilograms so that we can check the latter against the former. However, the name that the database manager automatically gives the calculated column isn't particular readable. Let's use `as` to fix that.
+The query above shows both the mass in grams and the mass in kilograms so that we can check the latter against the former. However, the name that the database manager automatically gives the calculated column isn't particularly readable. Let's use `as` to fix that.
 
 ```sql
 select species, sex, body_mass_g, body_mass_g / 1000 as mass_kg
