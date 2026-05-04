@@ -84,7 +84,7 @@ We will explain what the blanks in the `sex` column mean in the next tutorial.
 
 1. How many penguins of each sex were found on each island?
 
-2. What is difference in weight between the heaviest female penguin and the lightest female penguin within each species?
+2. What is the difference in weight between the heaviest female penguin and the lightest female penguin within each species?
 
 3. Explain what the query below is calculating, and when its result would be useful.
 
