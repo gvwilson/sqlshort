@@ -132,7 +132,7 @@ where person not in (
 );
 ```
 
-The inner query returns just Amal (the only person who calibrated). The outer query then selects everyone whose name does not appear in that result, giving us Gita and Madhi. Ysing a subquery to create a set, then filtering with `not in` is one of the most common uses of subqueries.
+The inner query returns just Amal (the only person who calibrated). The outer query then selects everyone whose name does not appear in that result, giving us Gita and Madhi. Using a subquery to create a set, then filtering with `not in` is one of the most common uses of subqueries.
 
 <div class="callout" markdown="1">
 
