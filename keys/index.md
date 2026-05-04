@@ -104,7 +104,7 @@ where survey.survey_id is null;
 
 As a reminder, here's the structure of the survey database.
 
-![survey tables](https://raw.githubusercontent.com/marimo-team/learn/main/sql/public/survey_tables.svg)
+![survey tables](./survey_tables.svg)
 
 Notice that the `person` table has a foreign key called `supervisor_id` that refers back to the table's own primary key, `person_id`. This relationship makes sense: supervisors are people, so they're stored in the same table as everyone else. However, if we want to generate a list of people's names and their supervisors' names, we _can't_ just join `person` to `person`.
 
