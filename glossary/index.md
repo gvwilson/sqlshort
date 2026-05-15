@@ -70,10 +70,6 @@
 <span id="cross_join">cross join</span>
 :   A join that creates the cross-product of rows from two tables.
 
-<span id="cte">common table expression</span> (CTE)
-:   A temporary table created at the start of a query,
-    usually to simplify writing the query.
-
 <span id="cursor">cursor</span>
 :   A reference to the current location in the results of an ongoing query.
 
@@ -150,6 +146,9 @@
 
 ## J
 
+<span id="json">JavaScript Object Notation</span> (JSON)
+:   A text format for representing numbers, strings, lists, and key-value maps.
+
 <span id="join">join</span>
 :   To combine records from two tables.
 
@@ -158,9 +157,6 @@
 
 <span id="join_table">join table</span>
 :   A table that exists solely to enable information from two tables to be connected.
-
-<span id="json">JavaScript Object Notation</span> (JSON)
-:   A text format for representing numbers, strings, lists, and key-value maps.
 
 ## K
 
@@ -277,13 +273,13 @@
 
 ## U
 
-<span id="upsert">upsert</span>
-:   To update a record if it exists
-    or insert (create) a new record if it doesn't.
-
 <span id="uri">Uniform Resource Identifier</span> (URI)
 :   A string that identifies a resource (such as a web page or database)
     and the protocol used to access it.
+
+<span id="upsert">upsert</span>
+:   To update a record if it exists
+    or insert (create) a new record if it doesn't.
 
 ## V
 

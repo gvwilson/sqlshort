@@ -4,11 +4,20 @@ description = "short introduction to SQL"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
-    "mccole",
+    "mccole>=3.1.0",
+    "taskipy>=1.14.1"
 ]
+
+[tool.taskipy.tasks]
+bib = {cmd = "mccole bib", help = "Check bibliography entries."}
+clean = {cmd = "find . -type f -name '*~' -exec rm {} \\;", help = "Clean up generated and cache files."}
+check = {cmd = "mccole check --src . --dst docs && typos *.md */*.md", help = "Check code and project."}
+serve = {cmd = "python -m http.server -d docs", help = "Serve generated HTML."}
+site = {cmd = "mccole build --src . --dst docs && touch docs/.nojekyll", help = "Build HTML."}
 
 [tool.mccole]
 title = "Introduction to SQL"
+brand = "SQL"
 repo = "https://github.com/gvwilson/sqlshort"
 skips = [
     "*~",
